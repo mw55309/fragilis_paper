@@ -4,8 +4,9 @@
 # the directory of fast5 files
 fast5.dir <- "/path/to/MinION/fast5/data"
 
-# the output fasta file
+# the output fasta/q files
 fasta.out <- "poRe.2D.fasta"
+fastq.out <- "poRe.2D.fastq"
 
 # load poRe
 library(poRe)
@@ -23,5 +24,14 @@ for (f5 in files) {
 	# output to file fasta.out
 	if (typeof(fasta) == "list") {
 		cat(fasta$'2D', file=fasta.out, append=TRUE, sep="\n")
+	}
+
+	# extract fastq as a list
+	fastq <- get_fastq(f5, which="2D")
+
+	# as long as we have a list
+        # output to file fastq.out
+	if (typeof(fastq) == "list") {
+		cat(fastq$'2D', file=fastq.out, append=TRUE, sep="\n")
 	}
 }
