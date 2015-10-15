@@ -12,7 +12,7 @@ spades.py -o hybrid -1 miseq.R1.fastq -2 miseq.R2.fastq --nanopore minion.2D.fas
 perl filter.pl hybrid/scaffolds.fasta > topfive.fasta
 
 # scaffold with SSPACE
-SSPACE-LongRead.pl -c topfile.fasta -p minion.2D.fasta -b SSPACE_1 -a 200 -i 65 -t 10 -o 10 -k
+SSPACE-LongRead.pl -c topfive.fasta -p minion.2D.fasta -b SSPACE_1 -a 200 -i 65 -t 10 -o 10 -k
 
 # scaffold again with SSPACE
 SPACE-LongRead.pl -c SSPACE_1/scaffolds.fasta -p minion.2D.fasta -b SSPACE_2 -a 200 -i 65 -t 10 -o 10 -k
