@@ -1,0 +1,1 @@
+MB0529 bwa miseq.R1.fastq miseq.R2.fastq 350 0.25 FR
